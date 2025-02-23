@@ -44,7 +44,7 @@
         </div>
 
         <div>
-            <button type="submit">Edit Task</button>
+            <button type="submit">Save Task</button>
         </div>
     </form>
 
