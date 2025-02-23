@@ -56,16 +56,27 @@ $tasks = [
 ];
 
 Route::get('/', function () use($tasks) {
+    return redirect()->route('tasks.index');
+});
+
+Route::get('/tasks', function () use($tasks) {
     return view('index', [
         'tasks'=> $tasks
     ]);
-});
+})->name('tasks.index');
 
-
-
-
-
-
+Route::get('/tasks/{id}', function ($id) use($tasks) {
+   $task = collect($tasks)->firstWhere('id', $id);
+    
+   if(!$task){
+       abort(404);
+   }    
+   else {
+       return view('show', [
+           'task'=> $task
+       ]);
+   }
+})->name('tasks.show');
 
 // Route::get('/hello', function () {
 //     return 'Hello';
