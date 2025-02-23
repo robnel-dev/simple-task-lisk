@@ -8,7 +8,7 @@
 
    <h1>@yield('title')</h1>
     <div>
-        @yield('content') <!-- Section for Page Content -->
+        @yield('content') 
     </div>
 
 
